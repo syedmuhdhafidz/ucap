@@ -1,148 +1,130 @@
-# UCAP — Stitch-inspired browser prototype
+# UCAP — UTP Cybersecurity Awareness Platform
 
-Version 0.2.0 · UTP Cyber Smart Competition 2026
+**Pause. Verify. Act.**
 
-A React application adapted from the supplied Stitch screens. Brand colours are screen approximations of the supplied UTP Pantone colours. The UCAP mark is a project mark, not a recreation of the UTP crest.
+A browser-based job scam awareness prototype for the **Universiti Teknologi PETRONAS (UTP) community**, developed for the **UTP Cyber Smart Competition 2026**.
 
-## Update your existing VS Code project (recommended)
+UCAP connects practical checks, short lessons, interactive stories, community learning and response guidance to help students and staff make safer decisions about job, internship and side-income opportunities.
 
-Your original React + Vite project already builds. Preserve its tested dependency versions and ESLint configuration.
+**[Explore the live demo](https://utp-cyberawareness-platform.vercel.app/)**
 
-1. Stop the development server using Ctrl+C.
-2. Make a copy of your existing project folder, excluding `node_modules` if convenient, or commit your current work to Git.
-3. Extract this ZIP to a separate folder. Open its `ucap-stitch` folder.
-4. In your existing project, replace `src` with this package's `src` folder. Replace the root `index.html`. Copy `public/favicon.svg` into your `public` folder. Copy `tests` into the project root. Do not paste the Stitch HTML files over React source files.
-5. Keep your existing `package.json`, `package-lock.json`, `vite.config.*` and `eslint.config.*`. This update needs only one additional runtime dependency.
-6. In the VS Code terminal, inside your existing project folder, run:
+> Student competition prototype. UCAP is not an official UTP service or an emergency-response service. Its scanner demonstrates local rule-based checks, not a trained AI scam detector.
 
-```powershell
-npm.cmd install tesseract.js@7.0.0
-npm.cmd run dev
-```
+## The problem UCAP addresses
 
-7. Open the local address printed by Vite. The browser routes use hashes, such as `/#/learn`, so Back, Forward and refresh work without server rewrite configuration.
-8. Run these checks in a second terminal:
+Recruitment messages can combine convincing branding, attractive earnings and time pressure. Recognising a warning sign is only part of the challenge: someone also needs to know how to verify an offer, practise a safer response and find help when something has already happened.
 
-```powershell
-node --test tests/*.test.js
-npm.cmd run lint
-npm.cmd run build
-```
+UCAP brings these steps into one learning experience. Its goal is to make independent verification and timely help-seeking everyday habits across the UTP community.
 
-No changes to `main.jsx` or `App.jsx` beyond copying the supplied `src` folder are needed. The old `App.css` and Vite assets are not used.
+## The solution: Detect, Educate, Respond
 
-## Start separately
+| Pillar | What UCAP provides | Habit it aims to develop |
+| --- | --- | --- |
+| **Detect** | Message-pattern checks, URL-structure checks and screenshot text extraction, with evidence and suggested next steps | Pause and investigate before paying, sharing details or following instructions |
+| **Educate** | Five short lessons, knowledge checks, an animated explainer and branching story games | Recognise manipulation and practise independent verification |
+| **Respond** | Situation-based SOS guidance, evidence reminders and links to support channels, including NSRC 997 | Seek appropriate help and take the next useful action without shame |
+| **Community learning** | Searchable fictional cases and a demonstration submission, review and publication workflow | Share useful patterns while protecting personal information |
 
-If you prefer a separate project, open this `ucap-stitch` folder in VS Code, use Node.js 24 LTS, and run:
+## Explore the prototype
 
-```powershell
-npm.cmd install
-npm.cmd run dev
-```
-
-The supplied standalone dependency manifest has not been installed or production-built in the authoring environment because npm registry access was blocked. The recommended update path above retains the versions already working on your computer. A local install creates the lockfile; commit it for repeatable builds.
-
-## What works
-
-| Area | Implemented behaviour |
+| Area | Working features |
 | --- | --- |
-| Navigation | Five main pages, hash routes, browser history, keyboard focus handling, mobile CSS |
-| Home | Connected calls to action, real progress, CSS-animated explainer with pause and transcript, curated official links |
-| Learn | Five lessons, explanations, knowledge checks, completion tracking, repeatable verification challenge |
-| Game | Two fictional branching stories: a task-scam offer and a plausible interview invitation; decision recap and replay |
-| Scan | Local text-pattern checks with evidence, basic URL structure checks without visiting URLs, screenshot preview and optional English OCR |
-| Library | Four fictional cases, search, category filtering, indicator table, case details, contribution form |
-| Demo review | In-memory queue, manual public-summary preparation, publication back to Library, editing and archiving |
-| SOS | Five situations, guidance, evidence reminders, print action, official links, confirmed hand-off to real `tel:997` dialler |
-| Progress | Completed lesson IDs, challenge completion and game-run count persisted locally; reset control |
+| **Home** | Introduction to Pause–Verify–Act, animated explainer with transcript, learning progress and curated resource links |
+| **Learn & Play** | Five lessons with feedback, a repeatable verification challenge and locally saved progress |
+| **Story games** | “The Offer” explores a task-scam scenario; “The Interview” explores independent verification of a plausible recruitment invitation. Both support reflection and replay |
+| **Scan** | Message checks, URL parsing, screenshot preview and optional English OCR through Tesseract.js; findings explain the matched evidence and link to related lessons |
+| **Library** | Four fictional cases, search, category filters, demonstration indicators and a fictional contribution form |
+| **Demo review workspace** | Manual preparation of an anonymised teaching summary, publication to the local Library, editing and archiving |
+| **SOS** | Guidance for money loss, credential disclosure, suspicious apps, suspicious offers and uncertainty; evidence checklist, printing and confirmation before opening the real 997 dialler |
 
-## Explicit limits
+## Building a sustainable culture of safer digital practice
 
-- This is an interactive frontend prototype, not a deployed reporting service or official UTP service.
-- The scanner is a transparent rule-based demonstration, not a trained or validated AI scam classifier. It may miss scams and misread legitimate content. No probabilities are invented.
-- URL checks parse structure only. No page fetch, redirect expansion, DNS check, malware scan or reputation lookup occurs.
-- Screenshot OCR reads text, not image authenticity or scam probability. Review extracted text before analysis. English recognition may misread Malay or mixed-language messages.
-- Tesseract.js downloads worker/core/language assets when needed. Internet access is required for the initial download. The browser processes image content locally. Third-party asset hosts receive normal request metadata. A timeout or network error leaves manual transcription available.
-- Basic message, lesson, game and case flows do not require an external service once the app is loaded. This is not a fully offline-installable PWA.
-- Sources are curated links, not a live news API. Semak Mule and Penipu.my open externally; no API integration or live police match is claimed.
-- New reports remain in React state in this browser tab. Refreshing clears them. Use fictional material only.
-- The demo reviewer is public, without authentication. Hiding this route would not secure it. Before real use, add authentication, server-side authorisation, private evidence storage, retention rules, audit records and a staffed review process.
-- No evidence-upload feature is provided for reports in this release; an actual shared evidence workflow needs private storage and access controls. Screenshots can be selected locally in Scan.
-- UI language is English. A complete BM translation has not been implemented; there is no non-functional language toggle.
-- No API keys, university support numbers, accreditation claims or disciplinary guarantees are invented.
+UCAP is designed around a repeatable learning cycle: **recognise a concern → understand the warning signs → practise verification → take appropriate action → share a useful lesson**.
 
-## A six-minute demonstration
+- **Learning at the point of need:** scan findings link directly to relevant lessons and response guidance.
+- **Practice beyond a single visit:** short lessons, replayable stories and a return-to-practice challenge give users reasons to revisit their decisions.
+- **Progress without public ranking:** learning progress stays in the browser, supporting individual practice without exposing performance.
+- **Support without blame:** story feedback and SOS guidance help users recover from earlier decisions and ask for help.
+- **Shared learning with care:** the Library demonstrates reviewing an experience for its practical takeaway before publishing an anonymised summary.
 
-1. **Home:** introduce Pause / Verify / Act. Show the example recruiter message and the first explainer scene.
-2. **Learn:** open “Verify a recruiter independently”, answer the question, and return to see progress change.
-3. **Game:** play “The Offer”. Choose “Accept immediately”, then “Pay RM300”, then “Stop, keep evidence, and contact my bank or 997”. Discuss recovery from earlier decisions without blame. Contrast with “The Interview”, where independent confirmation supports proceeding.
-4. **Scan:** load the fictional message example. Show matched evidence, uncertainty, and the lesson link. Check `https://careers.example/jobs` to show that zero matches still means unverified.
-5. **Library:** search “deposit”. Create a fictional submission, open the demo reviewer, write an anonymised summary and takeaway, publish it, and return to the Library. Refresh only after this segment; reports are memory-only.
-6. **SOS:** switch between money and credentials. Show the evidence reminders and call-confirmation dialog. Do not place a real emergency call during the demo.
-7. **Reset:** use the footer's Reset demonstration action before the next presentation.
+These are intended benefits, not measured outcomes. A sustainable campus rollout would also need a named content owner, regular guidance reviews, refreshed scenarios and participation from UTP students and staff. A future pilot should assess decisions on unfamiliar scenarios and retention over time, alongside usability and engagement.
 
-## Test checklist on your computer
+## Suggested demonstration
 
-- Home renders without console errors at desktop width and at 390 px and 320 px.
-- All navigation links work; Back, Forward and refresh preserve the selected route.
-- Tab navigation shows a visible focus indicator; a dialog traps focus, Escape closes it, and focus returns to its trigger.
-- Incorrect lesson answers provide feedback without marking complete. Correct answers update progress once. Refresh retains completion.
-- Explore both story scenarios, replay, pause and exit. All paths end in feedback.
-- Scan the fictional example, a routine interview invitation, a URL containing user information before `@`, and an unsupported URL scheme such as `javascript:`.
-- Choose a PNG, attempt OCR while online, correct the transcription, and scan. Try without network access to check error recovery. Oversized files and unsupported formats must be rejected.
-- Create a fictional report, publish a manually edited summary, then archive it. Refresh clears the report queue, while learning progress remains.
-- On SOS, switching situations changes the steps. Printing shows guidance; the Call 997 button opens confirmation before the dialler link.
-- Reset clears only UCAP's learning key and this tab's reports.
+1. **Home:** introduce UCAP’s purpose and show the animated explainer.
+2. **Scan:** load a fictional message and explain the evidence, uncertainty and suggested next steps.
+3. **Learn & Play:** follow a related lesson, answer its question and explore a story decision.
+4. **Library:** submit a fictional experience, open the demo review workspace, prepare a non-identifying summary and publish it back to the Library.
+5. **SOS:** switch between situations and show the evidence checklist and call-confirmation dialog. Close the dialog without placing a real call.
+6. Use **Reset demonstration** in the footer before the next presentation.
 
-## Validation completed during authoring
+## Current scope and data handling
 
-All 13 JavaScript/JSX source files were parsed with Babel. Eleven Node tests pass: specific text evidence, an ordinary recruitment message, direct negation, basic Malay cues, unsafe URL schemes, misleading URL user information, zero-match results, short links, corrupt progress recovery, complete story-graph traversal, and lesson/case references.
+This release is a deployed **frontend prototype** with no shared backend or reporting service.
 
-Production build, ESLint, browser rendering, mobile layout and live OCR were not executed in the authoring environment: npm registry requests returned HTTP 403 and a Chromium executable was unavailable. Run the local checks above before presenting. The CSS and interactions are implemented, but visual QA is still required.
+- **Scanning:** deterministic rules may miss scams or flag legitimate content. No matching patterns does not mean an offer is safe. URL checks do not visit websites, follow redirects or query malware/reputation databases.
+- **Screenshot OCR:** extracts text rather than assessing image authenticity. Review the transcription before checking it. Images are processed in the browser; OCR software and language assets download from third-party hosts, which receive normal request metadata. Manual text entry remains available.
+- **Learning progress:** lesson completion, challenge completion and game-run count are saved in this browser’s local storage.
+- **Scan content:** held temporarily on the Scan page and not saved after leaving it.
+- **Community submissions:** use fictional information only. Submissions exist in the current tab’s memory and disappear on refresh. The review workspace is public and unauthenticated; anonymisation is manual.
+- **External services:** Semak Mule and Penipu.my are external links. There is no police database connection, live news API, AI service or automatic report submission to a bank or authority.
+- **Language:** the interface is English. Some message patterns cover Bahasa Melayu; a complete bilingual interface is planned.
 
-## File map
+## Run locally
 
-| File | Responsibility |
+Use Node.js 24 and npm. In the VS Code terminal:
+
+```bash
+git clone https://github.com/syedmuhdhafidz/ucap.git
+cd ucap
+npm ci
+npm run dev
+```
+
+Open the local URL printed by Vite. On Windows PowerShell, use `npm.cmd` instead of `npm` if script execution restrictions prevent npm from running.
+
+Run the existing checks and create a production build:
+
+```bash
+node --test tests/core.test.js
+npm run lint
+npm run build
+npm run preview
+```
+
+The build output is `dist/`. The live prototype is hosted on Vercel. Routes use URL hashes, such as `/#/learn`.
+
+## Technical overview
+
+**React · Vite · JavaScript · CSS · Tesseract.js · ESLint**
+
+| Location | Purpose |
 | --- | --- |
-| `src/App.jsx` | Routing, shared navigation/footer, progress, session reports, error boundary |
-| `src/index.css` | UTP-themed tokens, layouts, responsive and print styling |
-| `src/components/UI.jsx` | Shared buttons, badges, notices, icons, dialogs, animated explainer |
-| `src/pages/Home.jsx` | Homepage |
-| `src/pages/Learn.jsx` | Learning hub and lesson detail |
-| `src/pages/Game.jsx` | Story player and reflection |
-| `src/pages/Scan.jsx` | Message, URL, screenshot and OCR flows |
-| `src/pages/Library.jsx` | Cases, indicators, submissions and demo moderation |
-| `src/pages/SOS.jsx` | Situation-based response guidance |
-| `src/data/content.js` | Lessons, examples, cases, explainer and source links |
-| `src/data/story.js` | Branching story definitions |
-| `src/lib/scan.js` | Deterministic text/URL checks |
-| `src/lib/progress.js` | Defensive progress parsing |
-| `tests/core.test.js` | Repeatable logic checks |
+| `src/App.jsx` | Navigation, hash routing, shared layout, progress and temporary submissions |
+| `src/pages/` | Home, learning, games, scanning, Library, demo review and SOS |
+| `src/components/UI.jsx` | Reusable controls, dialogs, icons and animated explainer |
+| `src/data/` | Lessons, fictional cases, source links and branching stories |
+| `src/lib/` | Rule-based scanning and progress parsing |
+| `src/index.css` | Theme, responsive layout and print styles |
+| `tests/core.test.js` | Checks for scanner behaviour, progress recovery and content/story consistency |
 
-## Design changes from Stitch
+The interface uses blue `#002855` and gold `#AF6D04` as screen approximations of the supplied UTP Pantone colours. The UCAP mark is a project identity, not the official UTP crest.
 
-- Restored readable headings and a consistent grid; reduced dense institutional language.
-- Kept blue #002855 and gold #AF6D04 as supplied screen approximations.
-- Uses local system fonts, local SVG icons, CSS illustrations and no stock-photo dependencies. The Inter font is used if installed, then Segoe UI/Arial fallback.
-- Removed unsupported “accredited”, “UTP SOC”, “live telemetry”, automated anonymisation, policy guarantees and fake progress claims.
-- Removed invented campus and bank contacts and arbitrary reporting deadlines.
-- Updated NSRC hours using PDRM's recent 24-hour guidance rather than the older hours in the generated screens.
-- Replaced probability-style scan gauges with observed evidence and explicit limitations.
-- Kept urgent help unlocked and accessible without login or lesson completion.
-- Separated the demonstrator review workspace from the main Library view, with explicit public-demo labelling.
+## Proposed next steps
 
-## Sources and maintenance
+- Evaluate the prototype with UTP students and staff, including mobile and keyboard usability.
+- Assign content ownership and establish a review schedule for lessons, scenarios and support links.
+- Add complete English/Bahasa Melayu content and regularly refreshed practice scenarios.
+- Develop authenticated reporting and reviewer access, private evidence storage, retention controls and audit records before accepting real submissions.
+- Evaluate AI-assisted analysis against representative scam and legitimate messages before integration; keep provider secrets on a backend.
+- Confirm permissions and availability for external data integrations before connecting them.
+- Measure whether users retain safer verification and response behaviours over time.
 
-Reviewed 21 October 2026. Review again before public release and whenever guidance changes.
+## External resources
 
-- PDRM, 26 May 2026, NSRC 997 operates 24 hours: https://www.rmp.gov.my/news-detail/2026/05/26/besmartstayalert-letsfightscammertogether-posting-pilihan-kena-tipu-jangan-panik-hubungi-nsrc-997!-(23.05.2026)
-- NFCC, immediate bank/NSRC contact and response context: https://nfcc.jpm.gov.my/index.php/en/about-nsrc — this older page lists different hours; the interface uses the recent PDRM announcement.
-- Official Semak Mule portal: https://semakmule.rmp.gov.my/
-- MyCERT Cyber999 reporting channels: https://www.mycert.org.my/cyber999
-- Penipu.my, community resource, not a police authority: https://penipu.my/
-- Tesseract.js: https://github.com/naptha/tesseract.js
-- Vite setup documentation: https://vite.dev/guide/
+- [Semak Mule — PDRM](https://semakmule.rmp.gov.my/)
+- [National Scam Response Centre — NFCC](https://nfcc.jpm.gov.my/index.php/en/about-nsrc)
+- [Cyber999 — MyCERT](https://www.mycert.org.my/cyber999)
+- [Penipu.my — community resource](https://penipu.my/)
 
-## Next integration milestone
-
-After local UI verification: agree the hosting/backend architecture, add an evaluated AI-assisted analysis service, confirm external API terms/access, provide private authenticated reporting and reviewer access, curate and date news content, translate the complete interface into BM, and pilot retention of safer decision-making with UTP users. Never place provider API keys in browser code or `VITE_*` variables.
+External resources operate independently of UCAP. Review current official guidance when maintaining response content.
