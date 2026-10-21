@@ -2,13 +2,13 @@
 
 **Pause. Verify. Act.**
 
-A browser-based job scam awareness prototype for the **Universiti Teknologi PETRONAS (UTP) community**, developed for the **UTP Cyber Smart Competition 2026**.
+A browser-based job scam awareness prototype for the **Universiti Teknologi PETRONAS (UTP) community**, developed for the **UTP Cyber Smart Challenge 2026**.
 
 UCAP connects practical checks, short lessons, interactive stories, community learning and response guidance to help students and staff make safer decisions about job, internship and side-income opportunities.
 
 **[Explore the live demo](https://utp-cyberawareness-platform.vercel.app/)**
 
-> Student competition prototype. UCAP is not an official UTP service or an emergency-response service. Its scanner demonstrates local rule-based checks, not a trained AI scam detector.
+> Student-built prototype. UCAP is not an official UTP service or an emergency-response service. Its scanner demonstrates local rule-based checks, not a trained AI scam detector.
 
 ## The problem UCAP addresses
 
