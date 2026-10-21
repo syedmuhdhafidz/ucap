@@ -410,7 +410,7 @@ export function ModuleResources() {
       <p className="caption ucap-resource-actions">
         Teaching notes and practice question adapted for UCAP from the
         supplied module. Attribution identifies the source; UCAP remains
-        a student-built prototype.
+        a student-build prototype.
       </p>
     </section>
   );
